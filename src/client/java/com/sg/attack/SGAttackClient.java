@@ -45,6 +45,9 @@ public class SGAttackClient implements ClientModInitializer {
 				hitTargets.addAll(List.of(targets));
 
 			}
+			if(hitTargets.isEmpty()){
+				return;
+			}
 			boolean isTarget = hitTargets.stream()
 					.anyMatch(t -> entity.getName().getString().toLowerCase().contains(t.toLowerCase()));
 			if (isTarget) {
