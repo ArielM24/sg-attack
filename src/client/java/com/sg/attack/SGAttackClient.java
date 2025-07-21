@@ -1,6 +1,7 @@
 package com.sg.attack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -43,14 +44,13 @@ public class SGAttackClient implements ClientModInitializer {
 				}
 				String[] targets = customName.getString().split("\\.");
 				hitTargets.addAll(List.of(targets));
-
 			}
 			if(hitTargets.isEmpty()){
 				return;
 			}
 			boolean isTarget = hitTargets.stream()
 					.anyMatch(t -> entity.getName().getString().toLowerCase().contains(t.toLowerCase()));
-			if (isTarget) {
+			if (!isTarget) {
 				return;
 			}
 			client.interactionManager.attackEntity(player, entity);
