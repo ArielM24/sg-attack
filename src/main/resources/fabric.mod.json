@@ -3,7 +3,7 @@
 	"id": "sg-attack",
 	"version": "${version}",
 	"name": "SG Attack",
-	"description": "Every 2 seconds attack an entity if its name is listed in a custom name of an item in inventory",
+	"description": "Every 2 seconds attack an entity if its name is listed in a custom name of the first item in inventory, like hit.<entity_name1>.<entity_name2>...",
 	"authors": [
 		"ArielM24"
 	],

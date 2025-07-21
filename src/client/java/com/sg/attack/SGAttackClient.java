@@ -34,18 +34,23 @@ public class SGAttackClient implements ClientModInitializer {
 			Entity entity = entityHitResult.getEntity();
 			PlayerInventory inv = player.getInventory();
 			ArrayList<String> hitTargets = new ArrayList<>();
-			for (ItemStack it : inv) {
-				Text customName = it.getCustomName();
-				if (customName == null) {
-					continue;
-				}
-				if (!customName.getString().startsWith("hit")) {
-					continue;
-				}
-				String[] targets = customName.getString().split("\\.");
-				hitTargets.addAll(List.of(targets));
+			if (inv.isEmpty()) {
+				return;
 			}
-			if(hitTargets.isEmpty()){
+			ItemStack firstSlot = inv.getStack(9);
+			if (firstSlot.isEmpty()) {
+				return;
+			}
+			Text customName = firstSlot.getCustomName();
+			if (customName == null) {
+				return;
+			}
+			if (!customName.getString().startsWith("hit")) {
+				return;
+			}
+			String[] targets = customName.getString().split("\\.");
+			hitTargets.addAll(List.of(targets));
+			if (hitTargets.isEmpty()) {
 				return;
 			}
 			boolean isTarget = hitTargets.stream()
