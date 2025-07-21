@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "sg-attack",
+	"version": "${version}",
+	"name": "SG Attack",
+	"description": "Every 2 seconds attack an entity if its name is listed in a custom name of an item in inventory",
+	"authors": [
+		"ArielM24"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/sg-attack/sg-attack.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.sg.attack.SGAttack"
+		],
+		"client": [
+			"com.sg.attack.SGAttackClient"
+		]
+	},
+	"mixins": [
+		"sg-attack.mixins.json",
+		{
+			"config": "sg-attack.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.7",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
