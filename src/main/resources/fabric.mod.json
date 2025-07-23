@@ -8,8 +8,8 @@
 		"ArielM24"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/ArielM24/sg-attack",
+		"sources": "https://github.com/ArielM24/sg-attack"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/sg-attack/sg-attack.png",
@@ -31,7 +31,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.7",
+		"minecraft": "~1.21.8",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
